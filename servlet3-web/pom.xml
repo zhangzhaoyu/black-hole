@@ -209,6 +209,6 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
-        <finalName>distributed-web</finalName>
+        <finalName>servlet3-web</finalName>
     </build>
 </project>
