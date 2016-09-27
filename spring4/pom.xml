@@ -11,13 +11,12 @@
         <groupId>org.zzy.black-hole</groupId>
         <artifactId>black-hole-parent</artifactId>
         <version>1.0</version>
-        <relativePath>../black-hole-parent</relativePath>
     </parent>
 
     <description>This project is for distributed system test.</description>
 
     <!-- define of profile-->
-    <profiles>
+    <!--<profiles>
         <profile>
             <id>development</id>
             <activation>
@@ -33,7 +32,7 @@
                 <build.profile.id>production</build.profile.id>
             </properties>
         </profile>
-    </profiles>
+    </profiles>-->
 
     <dependencies>
 
@@ -67,6 +66,21 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>log4j-over-slf4j</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
         </dependency>
 
         <!-- jackson for mvc.method.annotation.RequestMappingHandlerAdapter  -->
@@ -201,9 +215,23 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
+
+        <!-- Test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+        </dependency>
     </dependencies>
 
-    <build>
+   <!-- <build>
         <filters>
             <filter>src/main/resources/properties/${build.profile.id}.properties</filter>
         </filters>
@@ -213,6 +241,6 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
-        <finalName>distributed-web</finalName>
-    </build>
+        <finalName>spring4</finalName>
+    </build>-->
 </project>

@@ -17,6 +17,8 @@
         <module>redis-learning</module>
         <module>httpclient-learning</module>
         <module>sigar</module>
+        <module>dao-framework</module>
+        <module>dis-conf</module>
     </modules>
 
     <description>black-hole-parent</description>
@@ -35,9 +37,11 @@
         <slf4j-version>1.7.12</slf4j-version>
         <logback-version>1.1.7</logback-version>
         <jackson-version>2.4.0</jackson-version>
-        <hibernate-version>4.3.11.Final</hibernate-version>
+        <hibernate-version>5.1.1.Final</hibernate-version>
         <querydsl.version>2.9.0</querydsl.version>
         <activemq-version>5.7.0</activemq-version>
+        <dis-conf.version>2.6.36</dis-conf.version>
+        <zookeeper.version>3.4.9</zookeeper.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -91,11 +95,37 @@
                 <version>${slf4j-version}</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.4</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baidu.disconf</groupId>
+                <artifactId>disconf-client</artifactId>
+                <version>${dis-conf.version}</version>
+            </dependency>
+
             <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
                 <version>${httpclient-version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz</artifactId>
+                <version>2.2.3</version>
             </dependency>
 
             <!-- redis -->
@@ -112,6 +142,13 @@
             </dependency>
 
             <!-- hibernate -->
+            <!-- https://mvnrepository.com/artifact/c3p0/c3p0 -->
+            <dependency>
+                <groupId>c3p0</groupId>
+                <artifactId>c3p0</artifactId>
+                <version>0.9.1.2</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-validator</artifactId>
@@ -135,6 +172,13 @@
                 <artifactId>hibernate-entitymanager</artifactId>
                 <version>${hibernate-version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.jboss.logging/jboss-logging -->
+            <dependency>
+                <groupId>org.jboss.logging</groupId>
+                <artifactId>jboss-logging</artifactId>
+                <version>3.3.0.Final</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-ehcache</artifactId>
@@ -155,15 +199,15 @@
                 <artifactId>aopalliance</artifactId>
                 <version>1.0</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/javax.persistence/persistence-api -->
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>persistence-api</artifactId>
+                <version>1.0.2</version>
+            </dependency>
             <dependency>
                 <groupId>org.jboss.spec.javax.el</groupId>
                 <artifactId>jboss-el-api_3.0_spec</artifactId>
-                <version>1.0.0.Final</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate.javax.persistence</groupId>
-                <artifactId>hibernate-jpa-2.1-api</artifactId>
                 <version>1.0.0.Final</version>
             </dependency>
 
